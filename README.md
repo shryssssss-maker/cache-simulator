@@ -23,8 +23,9 @@
    - [Experiment 5 — Smaller Cache (512B, 4-way)](#experiment-5--smaller-cache-512b-4-way)
 7. [Head-to-Head Comparison Table](#head-to-head-comparison-table)
 8. [Key Findings](#key-findings)
-9. [Installation & Usage](#installation--usage)
-10. [Configuration Reference](#configuration-reference)
+9. [Limitations & Future Work](#limitations--future-work)
+10. [Installation & Usage](#installation--usage)
+11. [Configuration Reference](#configuration-reference)
 
 ---
 
@@ -588,25 +589,6 @@ All parameters are in [`config.py`](config.py). Change once, propagates everywhe
 | `miss_penalty` | -1.0 | Penalty for bad eviction → miss |
 | `dirty_penalty` | -1.0 | Penalty for dirty eviction → writeback |
 | `recency_bonus_max` | +0.3 | Bonus for evicting stale blocks |
-
----
-
-## 📊 Where to Put Your Screenshots
-
-When sharing this project (LinkedIn, reports, presentations), use these specific charts:
-
-| Chart File | What to Show | Why It's Important |
-|---|---|---|
-| `plots/02_amat.html` | Zipfian group, DQN bar at 98.9 | Proof DQN is faster than LRU overall |
-| `plots/05_writeback_rate.html` | Zipfian group, DQN bar at 31.8% | Proof reward shaping (dirty penalty) worked |
-| `plots/03_gap_to_optimal.html` | DQN line closest to Belady's | Shows how close DQN gets to theoretical optimal |
-| `plots/01_hit_rate.html` | All patterns | Shows DQN matches LRU on hit rate |
-
-> ⚠️ Make sure to generate plots from `results_best.csv` (Experiment 3) for the best-looking numbers. Run:
-> ```bash
-> Copy-Item -Path "results\results_best.csv" -Destination "results\results.csv" -Force
-> python main.py visualize
-> ```
 
 ---
 
