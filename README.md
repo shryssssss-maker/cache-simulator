@@ -339,6 +339,11 @@ Training on a mixed workload (50% Zipfian, 25% Random, 25% Stride) caused hit ra
 
 Moving `agent.decay_epsilon()` from **inside the training step loop** to **after each episode** was critical. Per-step decay collapsed epsilon too fast (episode 5 was already nearly greedy with no learned strategy), while per-episode decay allowed proper exploration through full episodes before exploiting.
 
+### 🚀 Milestone: Removing the Training Wheels (Safety Guards)
+
+In the early versions of the simulator, we had hard-coded "safety overrides" in `simulator.py` that would block the DQN if it tried to make a catastrophically bad eviction (like evicting a block with `recency == 0`). 
+However, as the reward shaping (`dirty_penalty = -1.0`) and state representation (sorting) clicked into place, we realized the DQN had learned the rules of the environment natively. It stopped making illegal or suicidal moves entirely. **We deleted the safety guards from the codebase**, proving the DQN was capable of raw, unassisted control over the cache.
+
 ---
 
 ## Experiments & Results
