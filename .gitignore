@@ -1,0 +1,86 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# ============================================================
+# Virtual Environment
+# ============================================================
+venv/
+env/
+.env/
+ENV/
+
+# ============================================================
+# Trained Model Weights (large binary files)
+# Track only the best model — commit manually if needed
+# ============================================================
+models/*.pth
+
+# To commit a specific model, use:
+#   git add -f models/dqn_cache_best.pth
+
+# ============================================================
+# Generated Output Files
+# ============================================================
+
+# Plotly HTML charts (regenerated via `python main.py visualize`)
+plots/
+
+# Temporary / intermediate result CSVs
+results/results_zipfian_best_temp.csv
+
+# Log files
+*.log
+train_output.log
+
+# ============================================================
+# Data Traces (generated on the fly — not source code)
+# ============================================================
+data/traces/
+traces/
+
+# ============================================================
+# IDE & Editor Config
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================
+# OS Files
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Jupyter Notebooks Checkpoints
+# ============================================================
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# ============================================================
+# PyRight / Type Checker
+# ============================================================
+pyrightconfig.json
+
+# ============================================================
+# Build Artifacts
+# ============================================================
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ============================================================
+# Empty placeholder dirs — keep with .gitkeep instead
+# ============================================================
+outputs/
