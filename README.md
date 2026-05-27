@@ -172,6 +172,8 @@ Each cache block tracks 4 features:
 | `dirty` | Has this block been written to? | 0 or 1 |
 | `age` | Steps since loaded into cache | 0 → 1 (normalized) |
 
+> 🛡️ **Anti-Memorization (Address Decoupling):** Notice that the actual memory address (`tag`) is **deliberately hidden** from the neural network. By only feeding the AI normalized metadata, it is physically impossible for the model to memorize the specific training trace (e.g., "Address 0x00FF is accessed often, so keep it"). Instead, the AI is forced to learn abstract, generalizable rules about Zipfian metadata dynamics.
+
 The **critical breakthrough** was how these features are assembled into the state vector:
 
 ```python
