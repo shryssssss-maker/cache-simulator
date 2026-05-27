@@ -370,9 +370,9 @@ The DQN sacrificed 3.84% hit rate but reduced writebacks by 2.6 percentage point
 
 > **Config:** 1024B, 8-way, 50k trace, Zipfian only, **sorted state**, `dirty_penalty = -1.0`, epsilon per-episode
 
-![AMAT Comparison](images/bamat.png) here (Zipfian section, DQN = 98.9)**
-![Writeback Rate](images/bwriteback.png) here (Zipfian section, DQN = 31.8%)**
-![Belady Gap](images/bbelady_gap.png)
+![AMAT Comparison](images/bamat.png.jpeg)
+![Writeback Rate](images/bwriteback.png.jpeg)
+![Belady Gap](images/bbelady_gap.png.jpeg)
 
 | Policy | Hit Rate | AMAT | Writeback Rate |
 |---|---|---|---|
@@ -401,9 +401,9 @@ LRU's higher writeback rate (35.46%) adds more total writeback penalty than DQN'
 
 > **Config:** 1024B, 8-way, 50k trace, **50% Zipfian + 25% Random + 25% Stride**, sorted state, `dirty_penalty = -1.0`
 
-![AMAT Comparison](images/amat.png) here (DQN Zipfian = 101.5)**
-![Writeback Rate](images/writeback.png) here (DQN Zipfian = 33.04%)**
-![AMAT Comparison](images/amat.png)
+![AMAT Comparison](images/amat.png.jpeg)
+![Writeback Rate](images/writeback.png.jpeg)
+![Belady Gap](images/belady_gap.png.jpeg)
 
 | Policy | Hit Rate (Zipfian) | AMAT (Zipfian) | Writeback Rate (Zipfian) |
 |---|---|---|---|
