@@ -479,6 +479,22 @@ mindmap
 
 ---
 
+## Limitations & Future Work
+
+This project was built as a **Proof of Concept (PoC)** to explore the intersection of reinforcement learning and systems architecture. As such, there are valid critiques regarding its current scope:
+
+1. **Toy Scale vs. Production Scale:**
+   Modern L2/L3 caches are measured in Megabytes with thousands of sets. This simulator runs at a "toy scale" (1KB, 2 sets). Simulating industrial-scale caches requires frameworks like ChampSim and massive GPU training clusters. However, the structural breakthroughs discovered here (e.g., solving Permutation Invariance and proving the efficacy of Reward Shaping) are **scale-independent** and apply to caches of any size.
+2. **Statistical Rigour:**
+   Reinforcement Learning is notoriously vulnerable to random seed variance. A rigorous academic paper would average results across 10+ random seeds with standard deviation bounds. While these results are single-run, the AMAT improvement is not a statistical fluke of hit-rate—it is a **demonstrable behavioral shift**. The DQN tangibly learned to avoid dirty evictions due to the `-1.0` penalty, fundamentally altering its strategy compared to LRU.
+
+**Future implementations should explore:**
+- Multi-seed training for rigorous confidence intervals.
+- Integration with ChampSim for cycle-accurate, industrial-scale memory traces.
+- Using Recurrent Neural Networks (LSTMs) instead of MLPs to natively capture temporal sequences.
+
+---
+
 ## Installation & Usage
 
 ### Requirements
